@@ -16,7 +16,7 @@ jobs:
         with:
           service_account_email: ${{ secrets.GCP_SA_EMAIL }}
           service_account_key: ${{ secrets.GCP_SA_KEY }}
-          project_id: my-project
+          project_id: prj-ich-dwh-workspace-dev-fe16
 
       - name: Sync files to GCS
-        run: gsutil -m rsync -r -d ./path/to/local/directory gs://my-bucket/path/to/remote/directory
+        run: gsutil -m rsync -r -d ./path/to/local/directory gs://data-sources-development/github_test
