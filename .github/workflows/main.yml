@@ -1,9 +1,9 @@
 on:
   pull_request:
     types: [closed]
-    branches: [main]
+    branches: [master]
   push:
-    branches: [main]
+    branches: [master]
 jobs:
   push-to-gcs:
     runs-on: ubuntu-latest
