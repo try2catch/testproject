@@ -12,7 +12,5 @@ def print_hi(name):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     name = 'Try2Catch'
-    address = 'India'
+    address = 'Akhilesh'
     print_hi(f'Please subscribe like & share the video.:{name}')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
