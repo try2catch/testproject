@@ -1,0 +1,22 @@
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+  push:
+    branches: [main]
+jobs:
+  push-to-gcs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0.3.1
+        with:
+          service_account_email: ${{ secrets.GCP_SA_EMAIL }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          project_id: my-project
+
+      - name: Sync files to GCS
+        run: gsutil -m rsync -r -d ./path/to/local/directory gs://my-bucket/path/to/remote/directory
