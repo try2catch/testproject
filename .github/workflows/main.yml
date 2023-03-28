@@ -16,3 +16,4 @@ jobs:
 
       - name: Sync files to GCS
         run: gsutil -m rsync -r -d ./* gs://to_archive/Phanindra/github_action_test
+        working-directory: ${{ github.workspace }}
