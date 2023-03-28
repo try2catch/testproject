@@ -18,4 +18,4 @@ jobs:
           project_id: prj-ich-dwh-workspace-dev-fe16
 
       - name: Sync files to GCS
-        run: gsutil -m rsync -r -d ./local gs://data-sources-development/github_test
+        run: gsutil -m rsync -r -d ./local gs://to_archive/Phanindra/github_action_test
