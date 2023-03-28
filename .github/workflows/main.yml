@@ -15,5 +15,5 @@ jobs:
         run: gcloud auth activate-service-account --key-file=<(echo '${{ secrets.YOUR_SECRET_NAME }}')
 
       - name: Sync files to GCS
-        run: gsutil -m rsync -r -d testproject gs://to_archive/Phanindra/github_action_test
+        run: gsutil -m rsync -r -d /testproject gs://to_archive/Phanindra/github_action_test
         working-directory: ${{ github.workspace }}
