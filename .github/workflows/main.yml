@@ -10,12 +10,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Set up Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v0.4.0
-        with:
-          export_default_credentials: ${{ secrets.YOUR_SECRET_NAME }}
-          project_id: prj-ich-dwh-workspace-dev-fe16
+        
+      - name: Activate service account
+        run: gcloud auth activate-service-account --key-file=<(echo '${{ secrets.YOUR_SECRET_NAME }}')
 
       - name: Sync files to GCS
         run: gsutil -m rsync -r -d ./local gs://to_archive/Phanindra/github_action_test
